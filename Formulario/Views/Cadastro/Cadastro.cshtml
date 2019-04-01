@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Preencha o formulario</h2>
+
+<div>Nome: <input type="text" id="nomeId" /></div>
+<br />
+<div>Idade: <input type="text" id="idadeId" /></div>
+<br />
+<div>Email: <input type="text" id="emailId"/></div>
+<br />
+<input type="button" value="Salvar" onclick="Salvar()" />
+
+<script>
+    function Salvar() {
+        var nome = document.getElementById('nomeId').value;
+        var idade = document.getElementById('idadeId').value;
+        var email = document.getElementById('emailId').value;
+        var dadosCadastro = "Nome: " + nome + "\nIdade: " + idade + "\nE-mail: " + email;
+        //exibindo dados cadastrados em janela de alerta.
+        alert(dadosCadastro);
+    }
+</script>
+
+<div>
+    <!--Passando dados cadastrados por parametro-->
+    <a href="~/Salvar/Index?dados=dadosCadastrado">Salvar</a>
+    <br />
+    <a href="~/Home/Index">Inicio</a>
+</div>
